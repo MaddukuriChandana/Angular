@@ -1,0 +1,43 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Customer Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+          <div class="mb-3">
+            <div class="mb-3">
+                <label for="exampleInputName" class="form-label"> Customer Id</label>
+                <input formControlName="Id" type="text" class="form-control" id="exampleInputName">
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputName" class="form-label">FullName</label>
+              <input formControlName="FullName" type="text" class="form-control" id="exampleInputName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Age</label>
+                <input formControlName="Age" type="text" class="form-control" id="exampleInputName">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Gender</label>
+                <input formControlName="Gender" type="text" class="form-control" id="exampleInputName">
+              </div>
+              </div>
+          
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Address</label>
+            <input formControlName="Address" type="text" class="form-control" id="exampleInputName">
+          </div>
+  
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postCustomerDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

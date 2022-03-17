@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <h1 style="color:White;">Customer Form</h1>
+      <div class="d-flex">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+      </div>
+    </div>
+  </nav>
+  
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">FullName</th>
+         <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+     <tbody>
+        <tr *ngFor="let customer of  customerdata">
+            <td> {{ customer.Id }} </td>
+            <td> {{ customer.FullName }} </td>
+            <td> {{ customer.Age }} </td>
+            <td> {{ customer.Gender }} </td>
+            <td> {{ customer.Address }} </td>
+       <td>
+         <button class="btn btn-info max-6">Update</button>
+         <button class="btn btn-danger max-6">Delete</button>
+       </td>
+      </tr>
+     </tbody>
+  </table>
+  
+  
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Customer Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+          <div class="mb-3">
+            <div class="mb-3">
+                <label for="exampleInputName" class="form-label"> Customer Id</label>
+                <input formControlName="Id" type="text" class="form-control" id="exampleInputName">
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputName" class="form-label">FullName</label>
+              <input formControlName="FullName" type="text" class="form-control" id="exampleInputName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Age</label>
+                <input formControlName="Age" type="text" class="form-control" id="exampleInputName">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Gender</label>
+                <input formControlName="Gender" type="text" class="form-control" id="exampleInputName">
+              </div>
+              </div>
+          
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Address</label>
+            <input formControlName="Address" type="text" class="form-control" id="exampleInputName">
+          </div>
+  
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postCustomerDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
